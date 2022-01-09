@@ -1,0 +1,21 @@
+name: typescript
+on:
+  push:
+    branches:
+      - $default-branch
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  build:
+    uses: syncbuddy/.github/.github/workflows/typescript-build.yml@main
+    secrets:
+      codacy-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+  test:
+    uses: syncbuddy/.github/.github/workflows/typescript-test.yml@main
+    needs: build
+  release:
+    if: github.ref == 'refs/heads/main'
+    uses: syncbuddy/.github/.github/workflows/npm-release.yml@main
+    needs: test
+    secrets:
+      npm-token: ${{ secrets.NPM_TOKEN }}
