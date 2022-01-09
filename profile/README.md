@@ -1,6 +1,8 @@
-## Welcome to syncbuddy!
+## Welcome to repo buddy!
 
-syncbuddy is a GitHub App that updates repositories in your organization based on the configurations and artifacts from your `.github` repository.
+`repo-buddy` handles the boring work of repository management for you.
+
+It is a GitHub App that updates repositories in your organization based on the configurations in your `.github` repository.
 
 <!--
 
