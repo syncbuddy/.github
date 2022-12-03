@@ -1,5 +1,5 @@
 {
   "extends": [
-    "github>syncbuddy/renovate-preset"
+    "github>unional/renovate-preset"
   ]
 }

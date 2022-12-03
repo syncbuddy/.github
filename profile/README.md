@@ -1,6 +1,6 @@
-## Welcome to repo buddy!
+# Welcome to repo buddy
 
-`repo-buddy` handles the boring work of repository management for you.
+[repobuddy] handles the boring work of repository management for you.
 
 It is a GitHub App that updates repositories in your organization based on the configurations in your `.github` repository.
 
@@ -14,3 +14,5 @@ It is a GitHub App that updates repositories in your organization based on the c
 🍿 Fun facts - what does your team eat for breakfast?
 🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 -->
+
+[repobuddy]: https://github.com/repobuddy
