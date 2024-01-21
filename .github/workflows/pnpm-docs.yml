@@ -5,7 +5,7 @@ on:
       pnpm-version:
         type: string
         required: false
-        default: 7.17.1
+        default: 8.14.1
       publish-dir:
         type: string
         required: false
@@ -23,7 +23,7 @@ jobs:
           version: ${{ inputs.pnpm-version }}
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
           cache: pnpm
 
       - run: pnpm install
