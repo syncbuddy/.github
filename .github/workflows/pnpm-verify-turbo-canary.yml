@@ -35,7 +35,7 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - run: pnpm install turbo@canary
+      - run: pnpm install -w turbo@canary
 
       - name: Verify (Linux)
         run: xvfb-run -a pnpm verify
