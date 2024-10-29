@@ -3,6 +3,7 @@
     "autocrlf",
     "codeql",
     "npmjs",
+    "pnpx",
     "xvfb"
   ]
 }

@@ -27,6 +27,10 @@ jobs:
 
       - name: Install Dependencies
         run: pnpm install
+
+      - name: Install playwright browsers
+        run: pnpx playwright install --with-deps chromium
+
       - run: pnpm build
       - name: update .npmrc with token
         run: |
