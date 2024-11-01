@@ -63,8 +63,7 @@ jobs:
         with:
           name: snapshots
           path: |
-            '**/__snapshots__/linux/__diff_output__/**'
-            '**/__snapshots__/linux/__results__/**'
+            '__snapshots__/linux/__diff_output__'
       - name: codecov
         if: matrix.os == 'ubuntu-latest' && matrix.node-version == 20
         uses: codecov/codecov-action@v4
