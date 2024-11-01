@@ -48,6 +48,13 @@ jobs:
         run: pnpm verify
         if: ${{ matrix.os != 'ubuntu-latest' }}
 
+      - name: Archive snapshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: snapshots
+          path: |
+            '**/__snapshots__/**/__diff_output__'
+            '**/__snapshots__/**/__results__'
       - name: codecov
         if: matrix.os == 'ubuntu-latest' && matrix.node-version == 20
         uses: codecov/codecov-action@v4
