@@ -41,12 +41,13 @@ jobs:
       - name: Install playwright browsers
         run: pnpx playwright install --with-deps chromium
 
-      - name: Verify (Linux)
-        run: xvfb-run -a pnpm verify
-        if: ${{ matrix.os == 'ubuntu-latest' }}
-      - name: Verify (Windows/Mac)
-        run: pnpm verify
-        if: ${{ matrix.os != 'ubuntu-latest' }}
+      - name: Verify
+        run: |
+          if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
+            xvfb-run -a pnpm verify
+          else
+            pnpm verify
+          fi
 
       - name: Archive snapshots failures
         continue-on-error: true
