@@ -48,7 +48,8 @@ jobs:
         run: pnpm verify
         if: ${{ matrix.os != 'ubuntu-latest' }}
 
-      - name: Archive snapshots
+      - name: Archive snapshots failures
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: snapshots
