@@ -50,12 +50,11 @@ jobs:
         run: pnpm install
 
       - name: Verify
-        run: |
-          if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
-            xvfb-run -a pnpm verify
-          else
-            pnpm verify
-          fi
+        if: matrix.os == 'ubuntu-latest'
+        run: xvfb-run -a pnpm verify
+      - name: Verify
+        if: matrix.os != 'ubuntu-latest'
+        run: pnpm verify
 
       - name: Archive snapshots/linux
         if: failure()
